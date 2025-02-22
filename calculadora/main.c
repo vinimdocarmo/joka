@@ -2,10 +2,34 @@
 #include <stdlib.h>
 #include <time.h>
 
+int soma(int a, int b)
+{
+    int s = a + b;
+    return s;
+}
+
+int subtracao(int a, int b)
+{
+    int s = a - b;
+    return s;
+}
+
+int multiplicao(int a, int b)
+{
+    int s = a * b;
+    return s;
+}
+
+int divisao(int a, int b)
+{
+    int s = a / b;
+    return s;
+}
+
 int main(void)
 {
 
-    int a, b, operador, n;
+    int a, b, operador, resultado, n;
     char operacao;
 
     printf("informe tres numeros:\n");
@@ -14,31 +38,31 @@ int main(void)
     switch (operador)
     {
     case 1:
-        operador = a + b;
+        resultado = soma(a, b);
         operacao = '+';
         break;
     case 2:
-        operador = a * b;
+        resultado = multiplicao(a, b);
         operacao = '*';
         break;
     case 3:
-        operador = a / b;
+        resultado = divisao(a, b);
         operacao = '/';
         break;
     case 4:
-        operador = a - b;
+        resultado = subtracao(a, b);
         operacao = '-';
         break;
 
     default:
         printf("voce so pode escolher de 1 a 4: ");
         return 0;
-    }
+    } 
 
     // operador 1
     //  resultado de 2 + 2 = 4
     // operador 2
     //  resultado de 2 * 2 = 4
 
-    printf(" resuldato de %d %c %d = %d \n", a, operacao, b, operador);
+    printf(" resuldato de %d %c %d = %d \n", a, operacao, b, resultado);
 }
